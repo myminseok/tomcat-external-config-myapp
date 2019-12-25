@@ -1,0 +1,10 @@
+---
+applications:
+- name: myapp
+  buildpacks: 
+    - java_buildpack_offline
+  routes:
+  - route: myapp.pas.com
+  env:
+    JBP_CONFIG_TOMCAT: '[tomcat: {external_configuration_enabled: true, context_path: "/mydoc" }, external_configuration: {repository_root: "http://tomcat-external-config-repo.apps.internal:8080", version: "1.0.0_myapp"}]'
+
